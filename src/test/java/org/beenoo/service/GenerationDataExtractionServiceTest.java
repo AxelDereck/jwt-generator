@@ -19,7 +19,7 @@ import static org.junit.Assert.assertThrows;
 public class GenerationDataExtractionServiceTest {
     final String GENERATION_DATA_FILENAME = "sample-generation-data.yml";
     final String BAD_GENERATION_DATA_FILENAME = "sample-generation-data-bad.yml";
-    final String PRIVATE_KEY_FILENAME = "privateKey.key";
+    final String PRIVATE_KEY_FILENAME = "private.pem";
     final String TEMP_FOLDERNAME = "tmp";
     GenerationDataExtractionService generationDataExtractionService;
     ClassLoader classLoader;

@@ -22,6 +22,8 @@
     <lombok.version>1.18.30</lombok.version>
     <mockito.version>5.5.0</mockito.version>
     <commons-io.version>2.13.0</commons-io.version>
+    <nimbus-jose-jwt.version>9.9</nimbus-jose-jwt.version>
+    <bouncycastle.version>1.76</bouncycastle.version>
   </properties>
 
   <dependencies>
@@ -63,6 +65,18 @@
       <artifactId>lombok</artifactId>
       <version>${lombok.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>com.nimbusds</groupId>
+      <artifactId>nimbus-jose-jwt</artifactId>
+      <version>${nimbus-jose-jwt.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.bouncycastle</groupId>
+      <artifactId>bcpkix-jdk18on</artifactId>
+      <version>${bouncycastle.version}</version>
+    </dependency>
+
 
     <dependency>
       <groupId>junit</groupId>
