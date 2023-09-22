@@ -1,5 +1,6 @@
 package org.beenoo;
 
+import com.nimbusds.jose.JOSEException;
 import lombok.extern.slf4j.Slf4j;
 import org.beenoo.model.GenerationData;
 import org.beenoo.service.GenerationDataExtractionService;
@@ -25,19 +26,30 @@ public class JwtGeneratorTool
             log.info("Abnormal number of arguments : Should have one argument corresponding to the absolute path of your Generation data file");
             exit(1);
         }
-        manageJwtDataGeneration(args[0]);
+        String token = manageJwtDataGeneration(args[0]);
+        if(token.isEmpty()) {
+            log.error("Somehow we wasn't able to generate the expected token");
+            exit(4);
+        } else {
+            exit(0);
+        }
     }
 
     public static String manageJwtDataGeneration(String dataFilePath) {
+        String resultingToken = "";
         GenerationDataExtractionService extractionService = new GenerationDataExtractionService();
         GenerationData data = extractionService.parseFile(dataFilePath);
         try {
             JwtGenerationService jwtGenerationService = new JwtGenerationService();
             PrivateKey providedKey = jwtGenerationService.loadPrivateKeyFromFile(data.getPrivateKeyPath());
+            resultingToken = jwtGenerationService.generateJwtToken(data, providedKey);
         } catch (IOException ioException) {
             log.error("Unable to load specified private key from {} : {}", dataFilePath, ioException.getMessage());
+            exit(2);
+        } catch (JOSEException joseException) {
+            log.error("Failed to sign generated token : {}", joseException.getMessage());
             exit(3);
         }
-        return "";
+        return resultingToken;
     }
 }
