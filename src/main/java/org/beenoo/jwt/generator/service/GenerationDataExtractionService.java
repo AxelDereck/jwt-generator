@@ -1,10 +1,10 @@
-package org.beenoo.service;
+package org.beenoo.jwt.generator.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import org.beenoo.exception.GenerationDataNotFoundException;
-import org.beenoo.exception.GenerationDataParsingException;
-import org.beenoo.model.GenerationData;
+import org.beenoo.jwt.generator.exception.GenerationDataNotFoundException;
+import org.beenoo.jwt.generator.exception.GenerationDataParsingException;
+import org.beenoo.jwt.generator.model.GenerationData;
 
 import java.io.File;
 import java.io.IOException;

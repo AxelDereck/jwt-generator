@@ -1,4 +1,4 @@
-package org.beenoo;
+package org.beenoo.jwt.generator;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

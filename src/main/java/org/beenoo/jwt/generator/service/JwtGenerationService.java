@@ -1,4 +1,4 @@
-package org.beenoo.service;
+package org.beenoo.jwt.generator.service;
 
 import com.nimbusds.jose.JOSEException;
 import com.nimbusds.jose.JWSAlgorithm;
@@ -7,7 +7,8 @@ import com.nimbusds.jose.crypto.RSASSASigner;
 import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.SignedJWT;
 import lombok.extern.log4j.Log4j2;
-import org.beenoo.model.GenerationData;
+import org.beenoo.jwt.generator.model.GenerationData;
+import org.beenoo.jwt.generator.tool.DateTools;
 import org.bouncycastle.asn1.pkcs.PrivateKeyInfo;
 import org.bouncycastle.openssl.PEMParser;
 import org.bouncycastle.openssl.jcajce.JcaPEMKeyConverter;
@@ -18,14 +19,12 @@ import java.security.PrivateKey;
 import java.time.Instant;
 import java.util.Date;
 
-import static org.beenoo.tool.DateTools.addMinutes;
-
 @Log4j2
 public class JwtGenerationService {
 
     public String generateJwtToken(GenerationData data, PrivateKey loadedPrivateKey) throws JOSEException {
         Date issueDate = Date.from(Instant.now());
-        Date expirationDate = addMinutes(issueDate, 1440);
+        Date expirationDate = DateTools.addMinutes(issueDate, 1440);
 
         // Create a JWT Claims Set
         JWTClaimsSet claimsSet = new JWTClaimsSet.Builder()
