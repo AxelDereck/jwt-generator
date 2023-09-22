@@ -19,6 +19,8 @@
     <junit.version>4.13.2</junit.version>
     <jackson.dataformat.version>2.15.2</jackson.dataformat.version>
     <log4j.version>2.7</log4j.version>
+    <slf4j.version>2.0.9</slf4j.version>
+    <log4j-slf4j-impl.version>2.20.0</log4j-slf4j-impl.version>
     <lombok.version>1.18.30</lombok.version>
     <mockito.version>5.5.0</mockito.version>
     <commons-io.version>2.13.0</commons-io.version>
@@ -43,11 +45,15 @@
       <version>${log4j.version}</version>
     </dependency>
     <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-slf4j-impl</artifactId>
-      <version>${log4j.version}</version>
+      <version>${log4j-slf4j-impl.version}</version>
     </dependency>
-
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>

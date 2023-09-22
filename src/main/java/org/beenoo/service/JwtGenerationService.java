@@ -6,7 +6,7 @@ import com.nimbusds.jose.JWSHeader;
 import com.nimbusds.jose.crypto.RSASSASigner;
 import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.SignedJWT;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.beenoo.model.GenerationData;
 import org.bouncycastle.asn1.pkcs.PrivateKeyInfo;
 import org.bouncycastle.openssl.PEMParser;
@@ -20,7 +20,7 @@ import java.util.Date;
 
 import static org.beenoo.tool.DateTools.addMinutes;
 
-@Slf4j
+@Log4j2
 public class JwtGenerationService {
 
     public String generateJwtToken(GenerationData data, PrivateKey loadedPrivateKey) throws JOSEException {

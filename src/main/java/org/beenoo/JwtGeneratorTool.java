@@ -1,7 +1,7 @@
 package org.beenoo;
 
 import com.nimbusds.jose.JOSEException;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.beenoo.model.GenerationData;
 import org.beenoo.service.GenerationDataExtractionService;
 import org.beenoo.service.JwtGenerationService;
@@ -16,7 +16,7 @@ import static java.lang.System.exit;
  * from OpenSSL Private key and a set of data passed
  * through a GenerationData file
  */
-@Slf4j
+@Log4j2
 public class JwtGeneratorTool
 {
     public static void main( String[] args )
