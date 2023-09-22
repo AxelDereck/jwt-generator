@@ -1,6 +1,6 @@
 package org.beenoo.service;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.apache.commons.io.FileUtils;
 import org.beenoo.exception.GenerationDataNotFoundException;
 import org.beenoo.exception.GenerationDataParsingException;
@@ -15,7 +15,7 @@ import java.net.URL;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThrows;
 
-@Slf4j
+@Log4j2
 public class GenerationDataExtractionServiceTest {
     final String GENERATION_DATA_FILENAME = "sample-generation-data.yml";
     final String BAD_GENERATION_DATA_FILENAME = "sample-generation-data-bad.yml";
