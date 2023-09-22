@@ -1,10 +1,10 @@
-package org.beenoo.service;
+package org.beenoo.jwt.generator.service;
 
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.io.FileUtils;
-import org.beenoo.exception.GenerationDataNotFoundException;
-import org.beenoo.exception.GenerationDataParsingException;
-import org.beenoo.model.GenerationData;
+import org.beenoo.jwt.generator.exception.GenerationDataNotFoundException;
+import org.beenoo.jwt.generator.exception.GenerationDataParsingException;
+import org.beenoo.jwt.generator.model.GenerationData;
 import org.junit.Before;
 import org.junit.Test;
 

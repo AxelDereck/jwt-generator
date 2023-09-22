@@ -1,10 +1,10 @@
-package org.beenoo;
+package org.beenoo.jwt.generator;
 
 import com.nimbusds.jose.JOSEException;
 import lombok.extern.log4j.Log4j2;
-import org.beenoo.model.GenerationData;
-import org.beenoo.service.GenerationDataExtractionService;
-import org.beenoo.service.JwtGenerationService;
+import org.beenoo.jwt.generator.model.GenerationData;
+import org.beenoo.jwt.generator.service.GenerationDataExtractionService;
+import org.beenoo.jwt.generator.service.JwtGenerationService;
 
 import java.io.IOException;
 import java.security.PrivateKey;

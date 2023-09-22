@@ -1,4 +1,4 @@
-package org.beenoo.tool;
+package org.beenoo.jwt.generator.tool;
 
 import java.util.Calendar;
 import java.util.Date;

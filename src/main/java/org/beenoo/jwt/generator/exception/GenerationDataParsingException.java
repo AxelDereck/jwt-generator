@@ -1,4 +1,4 @@
-package org.beenoo.exception;
+package org.beenoo.jwt.generator.exception;
 
 public class GenerationDataParsingException extends RuntimeException {
     public GenerationDataParsingException(Exception exception) {

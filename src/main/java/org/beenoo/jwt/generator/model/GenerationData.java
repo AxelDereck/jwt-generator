@@ -1,4 +1,4 @@
-package org.beenoo.model;
+package org.beenoo.jwt.generator.model;
 
 import lombok.*;
 
