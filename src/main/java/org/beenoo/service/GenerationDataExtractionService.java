@@ -17,7 +17,7 @@ public class GenerationDataExtractionService {
         mapper = new ObjectMapper(new YAMLFactory());
     }
 
-    GenerationData parseFile(String generationDataFilePath) {
+    public GenerationData parseFile(String generationDataFilePath) {
         File generationDataFile = new File(generationDataFilePath);
         if(!generationDataFile.exists()) {
             throw new GenerationDataNotFoundException("Generation Data file " + generationDataFile + "specified not found");
